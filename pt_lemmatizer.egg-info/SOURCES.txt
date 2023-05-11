@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+pt_lemmatizer/__init__.py
+pt_lemmatizer/pt_lemmatizer.py
+pt_lemmatizer.egg-info/PKG-INFO
+pt_lemmatizer.egg-info/SOURCES.txt
+pt_lemmatizer.egg-info/dependency_links.txt
+pt_lemmatizer.egg-info/requires.txt
+pt_lemmatizer.egg-info/top_level.txt

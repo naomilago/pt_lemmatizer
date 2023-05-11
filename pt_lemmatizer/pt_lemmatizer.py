@@ -2,18 +2,17 @@ import unidecode
 import pickle
 import os
 
-
 class Lemmatizer():
     def __init__(self):
-        if (os.path.exists('lemmatizer.pickle')):
-            print('loading lemmatizer dict (./lemmatizer.pickle)')
+        if (os.path.exists('pt_lemmatizer/lemmatizer.pickle')):
+            print('loading lemmatizer dict (pt_lemmatizer/lemmatizer.pickle)')
             self.lemmatizer_dict = self.load_lemmatizer_dict()
         else:
-            print('generating lemmatizer dict (./lemmatizer.pickle)')
+            print('generating lemmatizer dict (pt_lemmatizer/lemmatizer.pickle)')
             self.lemmatizer_dict = self.generate_lemmatizer_dict()
 
     def generate_lemmatizer_dict(self):
-        file_name = 'data/lemmatization-pt.txt'
+        file_name = 'pt_lemmatizer/data/lemmatization-pt.txt'
 
         with open(file_name, encoding="utf-8") as f:
             lemmatizer_dict = {}
@@ -31,18 +30,17 @@ class Lemmatizer():
             for w in v:
                 inverse_lemmatizer_dict[w] = k
 
-        pickle.dump(inverse_lemmatizer_dict, open("lemmatizer.pickle", "wb"))
+        pickle.dump(inverse_lemmatizer_dict, open("pt_lemmatizer/lemmatizer.pickle", "wb"))
         return inverse_lemmatizer_dict
 
     def load_lemmatizer_dict(self):
-        return pickle.load(open("lemmatizer.pickle", "rb"))
+        return pickle.load(open("pt_lemmatizer/lemmatizer.pickle", "rb"))
 
-    def get_lemma(self, word):
+    def lemmatize(self, word):
         return self.lemmatizer_dict.get(word, word)
-
 
 if __name__ == '__main__':
     l = Lemmatizer()
-    w = 'carros'
+    w = 'apagou'
     print("word:", w)
-    print("lemma:", l.get_lemma('carros'))
+    print("lemma:", l.lemmatize(w))
