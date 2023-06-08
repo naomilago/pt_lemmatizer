@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import codecs 
 import os
 
-VERSION = '0.1.10' 
+VERSION = '0.2.15' 
 DESCRIPTION = 'A NLP package for Portuguese Lemmatization.' 
 LONG_DESCRIPTION = '''
 This NLP package for Portuguese lemmatization is a powerful and advanced tool that can accurately transform words into their base forms or lemmas, taking into account the specific grammatical rules and variations of the Portuguese language. It is designed to handle various types of text input and supports multiple output formats, making it a versatile tool for applications such as information retrieval, machine translation, sentiment analysis, and text classification. Additionally, the package is customizable and user-friendly, allowing users to specify their own dictionaries and rules for lemmatization and providing features for error correction and word sense disambiguation.
